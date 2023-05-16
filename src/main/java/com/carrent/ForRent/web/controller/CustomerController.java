@@ -19,7 +19,7 @@ public class CustomerController {
     }
 
 
-    @GetMapping("/Customers")
+    @GetMapping("/customers")
     @Operation(description = "Allow you to get the list of all customers", summary = "Get All Customers")
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Success Juju"), @ApiResponse(responseCode = "404", description = "Error not found")})
     public List<Customer> list() {
@@ -27,23 +27,23 @@ public class CustomerController {
 
     }
 
-    @GetMapping(value = "/Customers/{id}")
+    @GetMapping(value = "/customers/{id}")
     public Customer show(@PathVariable int id) {
         return customerDao.findById(id);
 
     }
 
-    @PostMapping("/Customers")
+    @PostMapping("/customers")
     public Customer add(@RequestBody Customer customer) {
         return customerDao.save(customer);
     }
 
-    @PutMapping("/Customers")
+    @PutMapping("/customers")
     public Customer update(@RequestBody Customer customer) {
         return customerDao.update(customer);
     }
 
-    @DeleteMapping("/Customers/{id}")
+    @DeleteMapping("/customers/{id}")
     public String delete(@PathVariable int id) {
         return customerDao.delete(id);
     }
