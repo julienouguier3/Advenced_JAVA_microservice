@@ -16,9 +16,9 @@ public class CustomerDaoImpl implements CustomerDao {
         dateOfBirth.set(1982, Calendar.JANUARY, 24);
         customers.add(new Customer(11, "Dupont", "Edouard", dateOfBirth, "15L69M142"));
         dateOfBirth.set(1968, Calendar.OCTOBER, 02);
-        customers.add(new Customer(11, "Martin", "Veronique", dateOfBirth, "15L69M142"));
+        customers.add(new Customer(25, "Martin", "Veronique", dateOfBirth, "15L69M142"));
         dateOfBirth.set(2002, Calendar.DECEMBER, 16);
-        customers.add(new Customer(11, "Lupin", "Benjamin", dateOfBirth, "15L69M142"));
+        customers.add(new Customer(32, "Lupin", "Benjamin", dateOfBirth, "15L69M142"));
 
     }
 
@@ -44,5 +44,18 @@ public class CustomerDaoImpl implements CustomerDao {
         return null;
     }
 
+    @Override
+    public Customer update(Customer customer) {
+        customers.set(customers.indexOf(customer), customer);
+        return null;
+    }
+
+    @Override
+    public String delete(int id) {
+        if (customers.remove(this.findById(id))) {
+            return "Success Delete";
+        }
+        return "404 error";
+    }
 
 }

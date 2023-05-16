@@ -10,4 +10,8 @@ public interface CustomerDao {
     Customer findById(int id); //return a product by its Id
 
     Customer save(Customer customer); //add a product
+
+    Customer update(Customer customer);
+
+    String delete(int id);
 }
