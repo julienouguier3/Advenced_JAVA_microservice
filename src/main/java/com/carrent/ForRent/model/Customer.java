@@ -1,8 +1,12 @@
-package model;
+package com.carrent.ForRent.model;
+
+import org.springframework.data.annotation.Id;
 
 import java.util.Calendar;
 
+
 public class Customer {
+
     private int id;
     private String lastname;
     private String firstname;
@@ -16,6 +20,7 @@ public class Customer {
         this.dateOfBirth = dateOfBirth;
         this.licenseNumber = licenseNumber;
     }
+
 
     public int getId() {
         return id;
